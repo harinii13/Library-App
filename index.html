@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Manager</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>📚 Library Manager</h1>
+    <button id="addBookBtn" class="btn btn-primary">+ Add Book</button>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <div class="stat-card"><span id="totalBooks">0</span><label>Total Books</label></div>
+      <div class="stat-card"><span id="availableBooks">0</span><label>Available</label></div>
+      <div class="stat-card"><span id="borrowedBooks">0</span><label>Borrowed</label></div>
+    </section>
+
+    <section class="toolbar">
+      <input type="text" id="searchInput" placeholder="Search by title, author, or genre...">
+      <select id="filterStatus">
+        <option value="all">All Status</option>
+        <option value="available">Available</option>
+        <option value="borrowed">Borrowed</option>
+      </select>
+      <select id="filterGenre">
+        <option value="all">All Genres</option>
+      </select>
+    </section>
+
+    <section id="bookGrid" class="book-grid"></section>
+    <p id="emptyState" class="empty-state" hidden>No books yet. Click "Add Book" to get started!</p>
+  </main>
+
+  <div id="bookModal" class="modal" hidden>
+    <div class="modal-content">
+      <h2 id="modalTitle">Add Book</h2>
+      <form id="bookForm">
+        <input type="hidden" id="bookId">
+        <label>Title <input type="text" id="title" required></label>
+        <label>Author <input type="text" id="author" required></label>
+        <label>Genre <input type="text" id="genre" placeholder="e.g. Fiction"></label>
+        <label>ISBN <input type="text" id="isbn"></label>
+        <label>Copies <input type="number" id="copies" min="1" value="1" required></label>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn" class="btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/books.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

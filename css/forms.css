@@ -1,0 +1,51 @@
+input, select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+input:focus, select:focus { outline: 2px solid var(--primary); }
+
+.btn {
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+
+.btn:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-danger { color: #dc2626; border-color: #fecaca; }
+.btn-small { padding: 0.35rem 0.7rem; font-size: 0.8rem; }
+
+#bookForm label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+#bookForm input { width: 100%; margin-top: 0.3rem; }
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
